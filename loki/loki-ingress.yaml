@@ -19,7 +19,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: loki-stack
+                name: loki-stack-charts
                 port:
                   number: 3100
     - host: grafana.paffcio.com
@@ -29,6 +29,6 @@ spec:
             path: "/"
             backend:
               service:
-                name: loki-stack-grafana
+                name: loki-stack-charts-grafana
                 port:
                   number: 80
