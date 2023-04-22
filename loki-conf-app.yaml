@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: loki-conf
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/pawelkuk/manifests.git
+    targetRevision: HEAD
+    path: loki
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: loki
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
