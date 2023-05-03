@@ -1,0 +1,8 @@
+apiVersion: khelm.mgoltzsche.github.com/v2
+kind: ChartRenderer
+metadata:
+  name: prometheus
+  namespace: prometheus
+repository: https://prometheus-community.github.io/helm-charts
+chart: kube-prometheus-stack
+version: 43.2.1
